@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apni Library — Library Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <h1 id="homeLink" tabindex="0" role="button" aria-label="Apni Library">
+      <span>A</span><span>p</span><span>n</span><span>i</span>
+      <span class="gap"></span>
+      <span>L</span><span>i</span><span>b</span><span>r</span><span>a</span><span>r</span><span>y</span>
+    </h1>
+    <p>श्रद्धावान् लभते ज्ञानम् — The one who has full faith and
+ devotion gains knowledge.</p>
+  </header>
+
+  <div class="layout">
+
+    <!-- ===== LEFT: shelves ===== -->
+    <nav class="sidebar" aria-label="Library sections">
+
+      <div class="nav-item open" data-section="catalogue">
+        <button class="nav-header" aria-expanded="true">
+          <span>📚 Catalogue</span>
+          <span class="chevron">›</span>
+        </button>
+        <div class="nav-panel-wrap">
+          <div class="nav-panel-inner">
+            <div class="nav-panel">
+              <div class="catalogue-select-row">
+                <select id="audienceSelect" aria-label="Choose catalogue">
+                  <option value="kids">Catalogue Kids</option>
+                  <option value="adults">Catalogue Adults</option>
+                </select>
+              </div>
+              <div class="mini-search">
+                <input type="text" id="catalogueSearch" placeholder="Search kids books…" aria-label="Search books" />
+                <button id="catalogueSearchBtn">Go</button>
+              </div>
+              <div class="book-list" id="list-catalogue"><div class="list-status">Loading shelf…</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item" data-section="events">
+        <button class="nav-header" aria-expanded="false">
+          <span>🎈 Events</span>
+          <span class="chevron">›</span>
+        </button>
+        <div class="nav-panel-wrap">
+          <div class="nav-panel-inner">
+            <div class="nav-panel" id="eventsPanel">
+              <div class="list-status">Loading events…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item" data-section="about">
+        <button class="nav-header" aria-expanded="false">
+          <span>🌟 About Us</span>
+          <span class="chevron">›</span>
+        </button>
+        <div class="nav-panel-wrap">
+          <div class="nav-panel-inner">
+            <div class="nav-panel">
+              <p class="about-text">Our journey began with a simple thought shared by a group of women—to create a space on campus where children could discover the joy of reading. What started with a handful of donated books has grown into a little haven of stories, learning, and creativity.
+
+<br>In a world increasingly dominated by digital screens, we aim to nurture a love for reading while focusing on the <b>holistic development of children</b> through engaging activities and meaningful experiences.
+
+<br>We believe childhood is the perfect time to nurture lifelong habits. Through our initiatives, we strive to instil values of sustainability, kindness, and responsibility towards the environment.
+
+<br><b>For us, this library is more than a collection of books; it is a small step towards nurturing curious minds, compassionate hearts, and responsible citizens of tomorrow.</b><br>Our little library continues to grow, bringing together <b>130+ members, both children and adults, and a collection of 700+ books and 60+ events conducted so far</b>, fostering a shared love for reading across generations.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- ===== RIGHT: home (quote) or open book ===== -->
+    <main class="stage">
+
+      <section class="home" id="homePanel" aria-live="polite">
+        <p class="home-hello">Welcome, little reader! 👋</p>
+        <figure class="quote-bubble">
+          <blockquote id="quoteText"></blockquote>
+          <figcaption id="quoteAuthor"></figcaption>
+        </figure>
+        <button class="quote-btn" id="quoteBtn" type="button">✨ Show another quote</button>
+        <p class="home-hint">Open the <strong>Catalogue</strong> on the left and tap a book to see its cover and story.</p>
+        <div class="mini-shelf" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </section>
+
+      <section class="book-spread" id="bookSpread" hidden></section>
+
+    </main>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
